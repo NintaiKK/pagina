@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloads de Aplicativos</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="fonte/pag-icone.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #5c7d5b;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .app-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-right: 20px;
+            border-radius: 10px;
+        }
+        .app-info {
+            flex: 1;
+            min-width: 250px;
+        }
+        .download-btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .download-btn:hover {
+            background-color: #2980b9;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+        @media (max-width: 600px) {
+            .app-card {
+                flex-direction: column;
+            }
+            .app-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Downloads de Aplicativos</h1>
+        <p>Encontre aqui todos os aplicativos disponíveis para download</p>
+    </header>
+
+    <main>
+        <!-- Aplicativo 1 -->
+        <div class="app-card">
+            <img src="fonte/email-icone.png" class="app-icon">
+            <div class="app-info">
+                <h2>Serviços Pelipper</h2>
+                <p><strong>Versão:</strong> 1.0.0</p>
+                <p><strong>Tamanho:</strong> 15 MB</p>
+                <p>O Serviços Pelipper é uma aplicação desktop desenvolvida para envio automatizado de mensagens de email.</p>
+                <a href="pelipper.rar" class="download-btn">Download para Windows</a>
+            </div>
+        </div>
+
+        <!-- Aplicativo 2 -->
+        <div class="app-card">
+            <img src="fonte/aproc-icone.png" alt="Ícone App 2" class="app-icon">
+            <div class="app-info">
+                <h2>Emissor de recibos</h2>
+                <p><strong>Versão:</strong> 2.1.0</p>
+                <p><strong>Tamanho:</strong> 25 MB</p>
+                <p>aplicação desktop de geração automatizada de recibos de pagamento e adiantamento, com gestão de funcionários e descontos.</p>
+                <a href="Gerador de recibos.rar" class="download-btn">Download para Windows</a>
+            </div>
+        </div>
+
+        <!-- Aplicativo 3 -->
+        <div class="app-card">
+            <div class="app-info">
+                <h2>Em breve!</h2>
+                <p>Estamos desenvolvendo um software novinho em folha para você!</p>
+		<p>Volte mais tarde ou acesse nosso fórum de notícias para se manter atualizado sobre novos softwares!</p>
+            </div>
+        </div>
+    </main>
+16:17 12/05/2025
+    <footer>
+        <p>&copy; 2025 Aprocont Tecnologia. Todos os direitos reservados.</p>
+        <p>Para suporte, entre em contato: mateus.roesch@aprocont.com</p>
+    </footer>
+</body>
+</html>
