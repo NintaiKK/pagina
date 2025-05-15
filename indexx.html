@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprocont Assessoria e Processamento Contábil</title>
+    <style>
+        /* Cores principais - PODE PERSONALIZAR */
+        :root {
+            --cor-primaria: #42725f;
+            --cor-secundaria: #a9cba6;
+            --cor-clara: #7ebea3;
+            --cor-destaque: #e0dba4;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #000000;
+        }
+        
+        header {
+            background-color: var(--cor-primaria);
+            color: black;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: var(--cor-secundaria);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--cor-secundaria);
+        }
+        
+        .hero {
+            background-color: var(--cor-secundaria);
+            color: black;
+            padding: 6rem 0 3rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--cor-clara);
+            color: #ffffff;
+            padding: 0.7rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--cor-primaria);
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--cor-primaria);
+        }
+        
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        
+        .service {
+            flex: 1 1 300px;
+            background-color: var(--cor-primaria);
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .service h3 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+        
+        .about {
+            background-color: var(--cor-clara);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        
+        .contact {
+            background-color: var(--cor-clara);
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+	    postion: relative;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--cor-primaria);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        footer {
+            background-color: var(--cor-primaria);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .footer-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section {
+            flex: 1 1 250px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--cor-secundaria);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo"><span>Aprocont  </span>Assessoria e Processamento Contábil</div>
+            <nav>
+                <ul>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="contact" class="hero">
+        <div class="container">
+            <h1>Soluções Contábeis Completas para seu Negócio</h1>
+            <p>Oferecemos serviços contábeis de alta qualidade para ajudar sua empresa a crescer e se manter em conformidade com as obrigações fiscais.</p>
+            <a href="https://api.whatsapp.com/send/?phone=5551995056315&text&type=phone_number&app_absent=0" class="btn">Fale Conosco</a>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>Contabilidade Empresarial</h3>
+                    <p>Gestão completa da contabilidade da sua empresa, incluindo balanços, demonstrações de resultados e relatórios gerenciais.</p>
+                </div>
+                <div class="service">
+                    <h3>Assessoria Fiscal</h3>
+                    <p>Otimização fiscal e planejamento tributário para reduzir custos e garantir conformidade com a legislação.</p>
+                </div>
+                <div class="service">
+                    <h3>Departamento Pessoal</h3>
+                    <p>Gestão completa da folha de pagamento, benefícios e obrigações trabalhistas.</p>
+                </div>
+                <div class="service">
+                    <h3>Abertura de Empresas</h3>
+                    <p>Assessoria completa desde a escolha do melhor regime tributário até o registro formal da empresa.</p>
+                </div>
+                <div class="service">
+                    <h3>Consultoria Financeira</h3>
+                    <p>Análise e planejamento financeiro para melhorar a saúde financeira do seu negócio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Nós</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Somos um escritório contábil com mais de 30 anos de experiência no mercado, dedicado a oferecer soluções personalizadas para cada cliente.</p>
+                    <p>Nossa missão é simplificar a contabilidade para você, permitindo que foque no que realmente importa: o crescimento do seu negócio.</p>
+                    <p>Com uma equipe altamente qualificada e sempre atualizada com as mudanças na legislação, garantimos serviços de excelência e conformidade fiscal.</p>
+                </div>
+                <div class="about-image">
+                    <!-- Substitua pela sua imagem -->
+                    <img src="logo.png" alt="Aprocont Assessoria e Processamento Contábil">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-info">
+                <div class="footer-section">
+                    <h3>Endereço</h3>
+                    <p>Av. Santa Rita, 834, sala 02</p>
+                    <p>Centro, Nova Santa Rita - RS</p>
+                    <p>CEP: 92480-000</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Horário de Atendimento</h3>
+                    <p>Segunda a Sexta: 8h às 17:45h</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>WhatsApp: (51) 99505-6315</p>
+                    <p>Email: adm@aprocont.com</p>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/grupoaprocont/"><i class="fab fa-instagram"></i></a>
+                <a href="https://api.whatsapp.com/send/?phone=5551995056315&text&type=phone_number&app_absent=0"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; <span id="year"></span> Aprocont. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Atualiza o ano no footer automaticamente
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Suaviza a rolagem para os links do menu
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    
+    <!-- Ícones do Font Awesome (opcional) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
