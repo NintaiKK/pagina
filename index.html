@@ -5,73 +5,153 @@
     <title>Aprocont Assessoria Contábil</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="_assets/images/2d0b56e7e51cf11036ad8734bdb67e2d.png">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: "Raleway", sans-serif;
             margin: 0;
             padding: 0;
             color: #202020;
+            line-height: 1.6;
         }
         .container {
-            max-width: 1366px;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
         }
         .header {
-            padding: 16px;
+            padding: 20px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+        }
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .header img {
+            height: 50px;
+            width: auto;
         }
         .logo {
-            font-size: 30px;
+            font-size: 24px;
             font-weight: bold;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
         .nav a {
-            margin: 0 15px;
             text-decoration: none;
             color: #000;
-            font-size: 18px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav a:hover {
+            color: #797be4;
         }
         .hero {
-            padding: 100px 20px;
-            text-align: left;
+            padding: 80px 0;
         }
         .hero h1 {
-            font-size: 65px;
+            font-size: 48px;
             font-weight: bold;
             margin-bottom: 20px;
+            line-height: 1.2;
         }
         .hero p {
-            font-size: 24px;
-            max-width: 900px;
-            text-align: left;
+            font-size: 18px;
+            max-width: 600px;
+        }
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
         }
         .services {
-            padding: 80px 20px;
-            text-align: center;
+            padding: 80px 0;
         }
-        .services h2 {
-            font-size: 53px;
-            margin-bottom: 60px;
+        .services-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
         }
         .service-card {
-            display: inline-block;
-            width: 30%;
-            margin: 0 1.5%;
-            vertical-align: top;
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #797be4;
+        }
+        .about-section {
+            padding: 80px 0;
+        }
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .about-image {
+            flex: 1;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .about-content {
+            flex: 2;
+        }
+        .about-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
         }
         .contact {
-            padding: 80px 20px;
+            padding: 80px 0;
         }
-        .contact h2 {
-            font-size: 53px;
-            margin-bottom: 40px;
+        .contact-container {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+        }
+        .contact-map {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .contact-map img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .contact-info {
+            flex: 1;
+        }
+        .contact-info h3 {
+            font-size: 22px;
+            color: #797be4;
+            margin-bottom: 10px;
         }
         .footer {
-            padding: 40px 20px;
+            padding: 40px 0;
             text-align: center;
-            font-size: 18px;
+            font-size: 16px;
             color: #76766b;
+            border-top: 1px solid #eee;
         }
         .btn {
             background-color: #797be4;
@@ -81,6 +161,26 @@
             text-decoration: none;
             display: inline-block;
             font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #5d5fca;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .about-container, .contact-container {
+                flex-direction: column;
+            }
+            .about-image, .contact-map {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -88,8 +188,10 @@
     <div class="container">
         <!-- Cabeçalho -->
         <header class="header">
-            <img src = "logo.png"/>
-            <div class="logo">Aprocont Assessoria Contábil</div>
+            <div class="header-logo">
+                <img src="logo.png" alt="Logo Aprocont">
+                <div class="logo">Aprocont Assessoria Contábil</div>
+            </div>
             <nav class="nav">
                 <a href="#servicos">Serviços</a>
                 <a href="#sobre">Sobre</a>
@@ -100,58 +202,65 @@
 
         <!-- Seção Hero -->
         <section class="hero">
-            <h1>
-                Soluções contábeis
-                <br>
-                completas para seu negócio
-            </h1>
+            <h1>Soluções contábeis<br>completas para seu negócio</h1>
             <p>Oferecemos serviços contábeis de alta qualidade para ajudar sua empresa a crescer e se manter em conformidade com as obrigações fiscais.</p>
         </section>
 
         <!-- Seção Serviços -->
         <section class="services" id="servicos">
-            <h2>Serviços & Estratégias</h2>
+            <h2 class="section-title">Serviços & Estratégias</h2>
             
-            <div class="service-card">
-                <h3>Contabilidade Empresarial</h3>
-                <p>Gestão completa da contabilidade da sua empresa, incluindo balanços, demonstrações de resultados e relatórios gerenciais.</p>
-            </div>
-            
-            <div class="service-card">
-                <h3>Assessoria Fiscal</h3>
-                <p>Otimização fiscal e planejamento tributário para reduzir custos e garantir conformidade com a legislação.</p>
-            </div>
-            
-            <div class="service-card">
-                <h3>Departamento Pessoal</h3>
-                <p>Gestão completa da folha de pagamento, benefícios e obrigações trabalhistas.</p>
+            <div class="services-container">
+                <div class="service-card">
+                    <h3>Contabilidade Empresarial</h3>
+                    <p>Gestão completa da contabilidade da sua empresa, incluindo balanços, demonstrações de resultados e relatórios gerenciais.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Assessoria Fiscal</h3>
+                    <p>Otimização fiscal e planejamento tributário para reduzir custos e garantir conformidade com a legislação.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Departamento Pessoal</h3>
+                    <p>Gestão completa da folha de pagamento, benefícios e obrigações trabalhistas.</p>
+                </div>
             </div>
         </section>
 
         <!-- Seção Sobre -->
-        <section class="contact" id="sobre">
-            <img src = "logo.png"/>
-            <h2>Sobre Nós</h2>
-            <p>Fundado há 25 anos o Grupo Aprocont desenvolve trabalhos nas áreas Contábil, Fiscal, Trabalhista, prestando serviços a empresas de todas as partes e áreas distintas. Atravéz da experiência adquirida durante a longa jornada, a empresa desenvolveu métodos para melhor atender os clientes de forma especifica, conforme a necessidade dos mesmos.</p>
+        <section class="about-section" id="sobre">
+            <div class="about-container">
+                <img src="logo.png" alt="Sobre a Aprocont" class="about-image">
+                <div class="about-content">
+                    <h2>Sobre Nós</h2>
+                    <p>Fundado há 25 anos o Grupo Aprocont desenvolve trabalhos nas áreas Contábil, Fiscal, Trabalhista, prestando serviços a empresas de todas as partes e áreas distintas. Atravéz da experiência adquirida durante a longa jornada, a empresa desenvolveu métodos para melhor atender os clientes de forma especifica, conforme a necessidade dos mesmos.</p>
+                </div>
+            </div>
         </section>
 
         <!-- Seção Contato -->
         <section class="contact" id="contato">
-            <h2>Onde estamos</h2>
-
-            <img src = "local.png"/>
+            <h2 class="section-title">Onde estamos</h2>
             
-            <h3>Endereço</h3>
-            <p>Av. Santa Rita, 874, sala 02 Centro<br>
-            Nova Santa Rita - RS<br>
-            CEP: 92480-000</p>
-            
-            <h3>Contato</h3>
-            <p>WhatsApp: (51) 99505-6315<br>
-            Email: adm@aprocont.com</p>
-            
-            <h3>Horário de atendimento</h3>
-            <p>Segunda a Sexta: 8h às 17:45h</p>
+            <div class="contact-container">
+                <div class="contact-map">
+                    <img src="local.png" alt="Localização Aprocont">
+                </div>
+                <div class="contact-info">
+                    <h3>Endereço</h3>
+                    <p>Av. Santa Rita, 874, sala 02 Centro<br>
+                    Nova Santa Rita - RS<br>
+                    CEP: 92480-000</p>
+                    
+                    <h3>Contato</h3>
+                    <p>WhatsApp: (51) 99505-6315<br>
+                    Email: adm@aprocont.com</p>
+                    
+                    <h3>Horário de atendimento</h3>
+                    <p>Segunda a Sexta: 8h às 17:45h</p>
+                </div>
+            </div>
         </section>
 
         <!-- Rodapé -->
